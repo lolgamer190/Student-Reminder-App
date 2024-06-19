@@ -1,0 +1,33 @@
+#:include Login.kv
+#:include signup.kv
+#:include kv/Home_screen.kv
+#:include kv/Calendar_screen.kv
+#:include kv/Syllabus_screen.kv
+#:include kv/Reminder_screen.kv
+#:include kv/Profile_screen.kv
+
+GridLayout:
+    cols: 1
+    ScreenManager:
+        id: screen_manager
+        LoginScreen:
+            name: "login_screen"
+            id: login_screen
+        SignupScreen:
+            name: "signup_screen"
+            id: signup_screen
+        HomeScreen:
+            name: "home_screen"
+            id: home_screen
+        CalendarScreen:
+            name: "calendar_screen"
+            id: calendar_screen
+        SyllabusScreen:
+            name: "syllabus_screen"
+            id: syllabus_screen
+        ReminderScreen:
+            name: "reminder_screen"
+            id: reminder_screen
+        ProfileScreen:
+            name: "profile_screen"
+            id: profile_screen

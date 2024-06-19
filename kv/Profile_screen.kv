@@ -1,0 +1,27 @@
+<ProfileScreen>:
+    FloatLayout:
+        MDBoxLayout:
+            adaptive_height: True
+            spacing: 10
+            padding: 10
+            MDIconButton:
+                icon: 'home-variant-outline'
+                on_release: app.change_screen("home_screen")
+            MDIconButton:
+                icon: 'calendar-month-outline'
+                on_release: app.change_screen("calendar_screen")
+            MDIconButton:
+                icon: 'plus-box-outline'
+                on_release: app.change_screen("syllabus_screen")
+            MDIconButton:
+                icon: 'bell-outline'
+                on_release: app.change_screen("reminder_screen")
+            MDIconButton:
+                icon: 'circle-outline'
+                FitImage:
+                    source:'profile.jpg'
+                    size_hint: None, None
+                    size: 18, 18
+                    radius: [18,]
+                    pos_hint: {"center_x": 0.5, "center_y": 0.5}
+            

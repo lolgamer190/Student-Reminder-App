@@ -1,0 +1,83 @@
+<LoginScreen>:
+    BoxLayout:
+        size_hint: .8,.8
+        pos_hint: {"center_x": .5, "center_y": .5}
+        spacing: 25
+        orientation: 'vertical'
+        MDLabel:
+            id: "app_name"
+            text: "App Name"
+            font_size: 30
+            halign: 'center'
+            size_hint_y: None
+            height: self.texture_size[1]
+            padding_y: 15
+        MDLabel:
+            id: "sign_in"
+            text: "Sign In"
+            font_size: 30
+            halign: 'center'
+            size_hint_y: None
+            height: self.texture_size[1]
+            padding_y: 15
+        MDTextField:
+            hint_text: "Username or email address"
+            mode: 'round'
+            text_color_focus: 0,0,0,1
+            text_color_normal: 0,0,0,1
+        MDTextField:
+            hint_text: "Password"
+            mode: 'round'
+            password: True
+            text_color_focus: 0,0,0,1
+            text_color_normal: 0,0,0,1
+        MDFillRoundFlatButton:
+            text: "Log in"
+            halign: 'center'
+            font_style: 'Button'
+            size_hint: (1,0)
+            theme_text_color: 'Custom'
+            text_color: app.theme_cls.primary_light
+            md_bg_color: 0,0,0,1
+            pos_hint: {"center_x": 0.5}
+            on_release: app.change_screen("home_screen")
+        MDFillRoundFlatButton:
+            text: "Forgot Password?"
+            halign: 'center'
+            font_style: 'Button'
+            size_hint: (1,0)
+            theme_text_color: 'Custom'
+            text_color: app.theme_cls.primary_light
+            md_bg_color: 0,0,0,1
+            pos_hint: {"center_x": 0.5}
+        MDLabel:
+            text: "or"
+            font_style: 'Caption' 
+            halign: 'center'
+            font_size: 14
+            size_hint_y: None
+            height: self.texture_size[1]
+            padding_y: 10
+        MDFillRoundFlatIconButton:
+            text: "     Google"
+            halign: 'center'
+            font_style: 'Button'
+            icon: 'google.png'
+            size_hint: (1,0)
+            theme_text_color: 'Custom'
+            text_color: app.theme_cls.primary_dark
+            pos_hint: {"center_x": 0.5} 
+        MDFillRoundFlatButton:
+            text: "Sign up"
+            halign: 'center'
+            font_style: 'Button'
+            size_hint: (1,0)
+            theme_text_color: 'Custom'
+            text_color: app.theme_cls.primary_light
+            md_bg_color: 0,0,0,1
+            pos_hint: {"center_x": 0.5}
+            on_release: app.change_screen("signup_screen")
+
+
+        
+
