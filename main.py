@@ -8,6 +8,8 @@ from kivy.core.window import Window
 from kivy.metrics import dp
 from kivy.uix.anchorlayout import AnchorLayout
 
+from forgot import forgotPassword
+
 class LoginScreen(Screen):
     pass
 
@@ -47,6 +49,8 @@ class MainApp(MDApp):
             ("Due Date", dp(50)),
             ]
     )
+    def forgotP(self):
+        forgotPassword()
 
 
 if __name__ == '__main__':
