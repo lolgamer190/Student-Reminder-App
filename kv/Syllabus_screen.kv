@@ -1,5 +1,19 @@
 <SyllabusScreen>:
     FloatLayout:
+        MDLabel:
+            id: file_choose
+            text: "Choose a file to upload"
+            bold: True
+            font_size: 20
+            halign: 'center'
+            size_hint_y: None
+            height: self.texture_size[1]
+            pos_hint:{'top': .9}
+        MDIconButton:
+            icon: 'file-upload'
+            on_release: app.change_screen("file_screen")
+            pos_hint: {'x': .7, 'top': .9}
+        
         MDBoxLayout:
             adaptive_height: True
             spacing: 10

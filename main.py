@@ -31,7 +31,10 @@ class ReminderScreen(Screen):
     pass
 class ProfileScreen(Screen):
     pass
-
+class FileScreen(Screen):
+    pass
+class ChangePassword(Screen):
+    pass
 class MainApp(MDApp):
     Window.size = [300,600]
     theme_cls = ThemeManager()

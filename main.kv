@@ -5,6 +5,8 @@
 #:include kv/Syllabus_screen.kv
 #:include kv/Reminder_screen.kv
 #:include kv/Profile_screen.kv
+#:include kv/Change_password.kv
+#:include kv/Choose_file.kv
 
 GridLayout:
     cols: 1
@@ -31,3 +33,9 @@ GridLayout:
         ProfileScreen:
             name: "profile_screen"
             id: profile_screen
+        FileScreen:
+            name: "file_screen"
+            id: file_screen
+        ChangePassword:
+            name: "change_password"
+            id: change_password
