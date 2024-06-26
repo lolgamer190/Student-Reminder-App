@@ -1,5 +1,17 @@
 <CalendarScreen>:
     FloatLayout:
+        MDFillRoundFlatButton:
+            theme_text_color: 'Custom'
+            text_color: app.theme_cls.primary_light
+            md_bg_color: 0,0,0,1
+            text: "Select day of reminders"
+            halign: 'center'
+            font_style: 'Button'
+
+            size_hint: .3, .1
+            pos_hint: {'x': .15, 'top': .6}
+
+            on_press: app.show_date_picker()
         MDBoxLayout:
             adaptive_height: True
             spacing: 10
