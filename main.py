@@ -7,6 +7,8 @@ from kivymd.theming import ThemeManager
 from kivy.core.window import Window
 from kivy.metrics import dp
 from kivy.uix.anchorlayout import AnchorLayout
+from kivymd.uix.pickers import MDDatePicker
+
 
 from forgot import forgotPassword
 
@@ -42,15 +44,14 @@ class MainApp(MDApp):
     def change_screen(self, screen_name):
         screen_manager = self.root.ids['screen_manager']
         screen_manager.current = screen_name
-    def data_table(self):
-        self.table = MDDataTable(
-        column_data = [
-            ("Assignment Name", dp(50)),
-            ("Due Date", dp(50)),
-            ]
-    )
+
     def forgotP(self):
         forgotPassword()
+        
+    def show_date_picker(self):
+        date_dialog = MDDatePicker()
+        
+        date_dialog.open()
 
 
 if __name__ == '__main__':
