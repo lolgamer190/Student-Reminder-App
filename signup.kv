@@ -6,17 +6,18 @@
         orientation: 'vertical'
         MDLabel:
             id: "app_name"
-            text: "App Name"
-            font_size: 30
+            text: "App name"
+            bold: True
+            font_size: 25
             halign: 'center'
             size_hint_y: None
             height: self.texture_size[1]
-            padding_y: 15
+            padding_y:10
         MDLabel:
             id: "sign_up"
             text: "Create an account"
             bold: True
-            font_size: 23
+            font_size: 20
             halign: 'center'
             size_hint_y: None
             height: self.texture_size[1]
@@ -45,10 +46,9 @@
             text: "Have an account?"
             font_style: 'Caption'
             halign: 'center'
-            font_size: 14
+            font_size: 12
             size_hint_y: None
             height: self.texture_size[1]
-            padding_y:
         MDFillRoundFlatButton:
             text: "Log in"
             halign: 'center'
@@ -63,10 +63,9 @@
             text: "or continue with"
             font_style: 'Caption'
             halign: 'center'
-            font_size: 14
+            font_size: 12
             size_hint_y: None
             height: self.texture_size[1]
-            padding_y: 10
         MDFillRoundFlatIconButton:
             text: "     Google"
             halign: 'center'
@@ -80,6 +79,9 @@
             text: "By clicking continue, you agree to our Terms of Service and Privacy Policy"
             font_style: 'Caption'
             halign: 'center'
-            font_size: 10
+            font_size: 9
             size_hint_y: None
             height: self.texture_size[1]
+
+        MDLabel:
+            padding_y: 30
