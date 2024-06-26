@@ -7,19 +7,19 @@
         MDLabel:
             id: "app_name"
             text: "App Name"
-            font_size: 30
+            bold: True
+            font_size: 25
             halign: 'center'
             size_hint_y: None
             height: self.texture_size[1]
-            padding_y: 15
         MDLabel:
             id: "sign_in"
             text: "Sign In"
-            font_size: 30
+            bold: True
+            font_size: 17
             halign: 'center'
             size_hint_y: None
             height: self.texture_size[1]
-            padding_y: 15
         MDTextField:
             hint_text: "Username or email address"
             mode: 'round'
@@ -52,13 +52,12 @@
             pos_hint: {"center_x": 0.5}
             on_press: app.forgotP()
         MDLabel:
-            text: "or"
+            text: "or continue with"
             font_style: 'Caption' 
             halign: 'center'
-            font_size: 14
+            font_size: 12
             size_hint_y: None
             height: self.texture_size[1]
-            padding_y: 10
         MDFillRoundFlatIconButton:
             text: "     Google"
             halign: 'center'
@@ -68,6 +67,13 @@
             theme_text_color: 'Custom'
             text_color: app.theme_cls.primary_dark
             pos_hint: {"center_x": 0.5} 
+        MDLabel:
+            text: "Don't have an account?"
+            font_style: 'Caption' 
+            halign: 'center'
+            font_size: 12
+            size_hint_y: None
+            height: self.texture_size[1]
         MDFillRoundFlatButton:
             text: "Sign up"
             halign: 'center'
@@ -78,7 +84,15 @@
             md_bg_color: 0,0,0,1
             pos_hint: {"center_x": 0.5}
             on_release: app.change_screen("signup_screen")
-
+        MDLabel:
+            text: "By clicking continue, you agree to our Terms of Service and Privacy Policy"
+            font_style: 'Caption'
+            halign: 'center'
+            font_size: 9
+            size_hint_y: None
+            height: self.texture_size[1]
+        MDLabel:
+            padding_y:15
 
         
 
