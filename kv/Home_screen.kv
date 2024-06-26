@@ -1,5 +1,56 @@
 <HomeScreen>:
     FloatLayout:
+        MDLabel:
+            id: welcome
+            text: "Good Morning Helena Hills,"
+            bold: True
+            font_size: 20
+            halign: 'center'
+            size_hint_y: None
+            height: self.texture_size[1]
+            pos_hint:{'top': .9}
+
+        MDLabel:
+            text: "Classes"
+            bold: True
+            font_size: 20
+            size_hint_y: None
+            height:self.texture_size[1]
+            pos_hint:{'top': .75}
+
+        GridLayout:
+            size_hint_y: None
+            height: 200
+            width: self.minimum_width
+            pos_hint:{'top': .7}
+            cols: 2
+            MDLabel:
+                text: "Class Name"
+            MDLabel:
+                text: "     Time"
+            MDLabel:
+                text: "Class 1"
+                bold: True
+            MDLabel:
+                text: "11:30 - 12:10"
+            MDLabel:
+                text: "Class 2"
+                bold: True
+            MDLabel:
+                text: "12:30 - 13:50"
+            MDLabel:
+                text: "Class 3"
+                bold: True
+            MDLabel:
+                text: "15:00 - 15:40"
+            MDLabel:
+                text: "Class 4"
+                bold: True
+            MDLabel:
+                text: "16:30 - 17:10"
+
+            
+
         MDBoxLayout:
             adaptive_height: True
             spacing: 10
