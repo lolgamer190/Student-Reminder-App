@@ -24,3 +24,9 @@ def updatePassword(email, newPassword, check):
         #will need way to get email from user without prompt in the "change password screen", maybe just keeps the email or saves it as a variable somewhere to have for later after its input
         if newPassword == check:
             collection.update_one({"email": email}, {"$set":{"password":newPassword}})
+
+def validateAccount(email, password):
+    if  collection.find_one({"email": email, "password": password}):
+        return True
+    else:
+        return False     
