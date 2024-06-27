@@ -6,11 +6,10 @@ from kivymd.uix.datatables import MDDataTable
 from kivymd.theming import ThemeManager
 from kivy.core.window import Window
 from kivy.metrics import dp
-from kivy.uix.anchorlayout import AnchorLayout
+from kivy.clock import Clock
 from kivymd.uix.pickers import MDDatePicker
-
-
 from forgot import forgotPassword
+from database import LoginDetails
 
 class LoginScreen(Screen):
     pass
@@ -35,6 +34,7 @@ class FileScreen(Screen):
     pass
 class ChangePassword(Screen):
     pass
+
 class MainApp(MDApp):
     Window.size = [300,600]
     theme_cls = ThemeManager()
@@ -43,6 +43,7 @@ class MainApp(MDApp):
         self.theme_cls.theme_style = "Light"
         self.theme_cls.primary_palette = "Gray"
         self.theme_cls.primary_hue = '200'
+        self.loginDetails = LoginDetails()
         return self.GUI
     def change_screen(self, screen_name):
         screen_manager = self.root.ids['screen_manager']
