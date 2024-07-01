@@ -15,17 +15,17 @@ class LoginDetails():
         
 
     #way to validate code on front end screen, can think about automating codes or something later, for now just a simple validate
-    def validateCode(code):
+    def validateCode(self,code):
         if code == "a1b2c3":
             return True
         
     #can use this for forgot password or changepassword
-    def updatePassword(email, newPassword, check):
+    def updatePassword(self,email, newPassword, check):
             #will need way to get email from user without prompt in the "change password screen", maybe just keeps the email or saves it as a variable somewhere to have for later after its input
             if newPassword == check:
                 collection.update_one({"email": email}, {"$set":{"password":newPassword}})
 
-    def validateAccount(email, password):
+    def validateAccount(self,email, password):
         if  collection.find_one({"email": email, "password": password}):
             return True
         else:

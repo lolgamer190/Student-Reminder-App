@@ -8,7 +8,6 @@ from kivy.core.window import Window
 from kivy.metrics import dp
 from kivy.clock import Clock
 from kivymd.uix.pickers import MDDatePicker
-from forgot import forgotPassword
 from database import LoginDetails
 
 class LoginScreen(Screen):
@@ -34,7 +33,8 @@ class FileScreen(Screen):
     pass
 class ChangePassword(Screen):
     pass
-
+class ForgotPassword(Screen):
+    pass
 class MainApp(MDApp):
     Window.size = [300,600]
     theme_cls = ThemeManager()
@@ -49,8 +49,7 @@ class MainApp(MDApp):
         screen_manager = self.root.ids['screen_manager']
         screen_manager.current = screen_name
 
-    def forgotP(self):
-        forgotPassword()
+    
         
     def show_date_picker(self):
         date_dialog = MDDatePicker()

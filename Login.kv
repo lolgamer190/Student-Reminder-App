@@ -43,7 +43,8 @@
             md_bg_color: 0,0,0,1
             pos_hint: {"center_x": 0.5}
             on_release: 
-                print ("Login details",login_email.text, login_password.text)
+                app.loginDetails.validateAccount(login_email.text, login_password.text)
+                app.change_screen("home_screen")
         MDFillRoundFlatButton:
             text: "Forgot Password?"
             halign: 'center'
@@ -53,7 +54,7 @@
             text_color: app.theme_cls.primary_light
             md_bg_color: 0,0,0,1
             pos_hint: {"center_x": 0.5}
-            on_press: app.forgotP()
+            on_press: app.change_screen("forgot_password")
         MDLabel:
             text: "or continue with"
             font_style: 'Caption' 
