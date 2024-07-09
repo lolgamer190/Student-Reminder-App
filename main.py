@@ -9,6 +9,10 @@ from kivy.metrics import dp
 from kivy.clock import Clock
 from kivymd.uix.pickers import MDDatePicker
 from database import LoginDetails
+from kivy.uix.boxlayout import BoxLayout
+from kivymd.uix.label import MDLabel
+from kivy.uix.popup import Popup
+from kivymd.uix.button import MDRaisedButton
 
 class LoginScreen(Screen):
     pass
@@ -35,6 +39,9 @@ class ChangePassword(Screen):
     pass
 class ForgotPassword(Screen):
     pass
+class FaqScreen(Screen):
+    pass
+
 class MainApp(MDApp):
     Window.size = [300,600]
     theme_cls = ThemeManager()
@@ -55,6 +62,17 @@ class MainApp(MDApp):
         date_dialog = MDDatePicker()
         
         date_dialog.open()
+
+    #Help popup in FAQ
+    def show_help_popup(self):
+        popup_content = BoxLayout(orientation='vertical', padding=10)
+        popup_content.add_widget(MDLabel(text="Contact us : email@business.com"))
+        close_button = MDRaisedButton(text="Close", size_hint_y=None, height=40)
+        close_button.bind(on_release=lambda x: help_popup.dismiss())
+        popup_content.add_widget(close_button)
+
+        help_popup = Popup(title="Help", content=popup_content, size_hint=(None, None), size=(300, 200))
+        help_popup.open()
 
 
 if __name__ == '__main__':

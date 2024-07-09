@@ -67,6 +67,9 @@
                 icon: 'bell-outline'
                 on_release: app.change_screen("reminder_screen")
             MDIconButton:
+                icon: 'help-circle'
+                on_release: app.change_screen("faq_screen")
+            MDIconButton:
                 on_release: app.change_screen("profile_screen")
                 FitImage:
                     source:'profile.jpg'
@@ -74,4 +77,3 @@
                     size: 25, 25
                     radius: [25,]
                     pos_hint: {"center_x": 0.5, "center_y": 0.5}
-            
