@@ -1,0 +1,90 @@
+<FaqScreen>:
+    name: "faq_screen"
+
+    BoxLayout:
+        orientation: 'vertical'
+        padding: dp(10) 
+        canvas.before:
+            Color:
+                rgba: 1, 1, 1, 1  # White background
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        BoxLayout:
+            size_hint_y: None
+            height: dp(50)
+            orientation: 'horizontal'
+            spacing: dp(10) 
+            MDIconButton:
+                icon: 'arrow-left'
+                theme_text_color: 'Custom'
+                text_color: 0, 0, 0, 1  # Black text
+                on_release: app.change_screen('home_screen')
+            MDLabel:
+                text: 'FAQ'
+                halign: 'center'
+                theme_text_color: 'Custom'
+                text_color: 0, 0, 0, 1  # Black text
+
+        ScrollView:
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint_y: None
+                height: self.minimum_height
+                padding: dp(10)
+                spacing: dp(10)
+
+                BoxLayout:
+                    orientation: 'vertical'
+                    size_hint_y: None
+                    height: dp(100)  
+                    MDLabel:
+                        text: "How do I upload my Syllabus?"
+                        halign: 'left'
+                        theme_text_color: 'Custom'
+                        text_color: 0, 0, 0, 1  # Black text
+                    MDLabel:
+                        text: "You can upload your syllabus by choosing the File Upload option from the menu."
+                        halign: 'left'
+                        theme_text_color: 'Custom'
+                        text_color: 0, 0, 0, 1  # Black text
+
+                BoxLayout:
+                    orientation: 'vertical'
+                    size_hint_y: None
+                    height: dp(100)  
+                    MDLabel:
+                        text: "How do I set Reminders?"
+                        halign: 'left'
+                        theme_text_color: 'Custom'
+                        text_color: 0, 0, 0, 1  # Black text
+                    MDLabel:
+                        text: "Reminders should automatically be imported and exported to your device's calendar."
+                        halign: 'left'
+                        theme_text_color: 'Custom'
+                        text_color: 0, 0, 0, 1  # Black text
+
+                BoxLayout:
+                    orientation: 'vertical'
+                    size_hint_y: None
+                    height: dp(100)  
+                    MDLabel:
+                        text: "Can I use this for more than schoolwork?"
+                        halign: 'left'
+                        theme_text_color: 'Custom'
+                        text_color: 0, 0, 0, 1  # Black text
+                    MDLabel:
+                        text: "This application was designed to work with students."
+                        halign: 'left'
+                        theme_text_color: 'Custom'
+                        text_color: 0, 0, 0, 1  # Black text
+
+        MDFillRoundFlatButton:
+            text: "Still Need Help?"
+            size_hint_y: None
+            height: dp(50)
+            theme_text_color: "Custom"
+            text_color: 1, 1, 1, 1  # White text
+            md_bg_color: 0, 0, 0, 1  # Black background
+            on_release: app.show_help_popup()
