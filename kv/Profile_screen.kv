@@ -39,6 +39,7 @@
                 text: "Helena Hills"
             MDIconButton:
                 icon:"pencil-outline"
+                on_release: app.change_screen("change_name")
             MDLabel:
                 text: "Username"
                 bold: True
@@ -46,6 +47,7 @@
                 text: "@username"
             MDIconButton:
                 icon:"pencil-outline"
+                on_release: app.change_screen("change_username")
             MDLabel:
                 text: "Email"
                 bold: True
@@ -53,6 +55,7 @@
                 text: "name@my.unt.edu"
             MDIconButton:
                 icon:"pencil-outline"
+                on_release: app.change_screen("change_email")
             MDLabel:
                 text: "Password"
                 bold: True
@@ -68,6 +71,7 @@
                 text: ""
             MDIconButton:
                 icon:"plus"
+                on_release: app.change_screen("faq_screen")
         MDBoxLayout:
             adaptive_height: True
             spacing: 10

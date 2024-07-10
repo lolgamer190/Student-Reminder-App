@@ -1,39 +1,30 @@
-<ForgotPassword>
+<ChangeName>
     BoxLayout:
         size_hint: .8,.8
         pos_hint: {"center_x": .5, "center_y": .5}
         spacing: 25
         orientation: 'vertical'
         MDLabel:
-            text: "Email ID:"
-            halign: 'center'
-            size_hint_y: None
-            height: self.texture_size[1]
-            padding_y: 15    
-        MDTextField:
-            hint_text: "Email ID"
-            mode: 'round'
-            text_color_focus: 0,0,0,1
-            text_color_normal: 0,0,0,1  
-        MDLabel:
-            text: "New Password:"
+            text: "New Name:"
             halign: 'center'
             size_hint_y: None
             height: self.texture_size[1]
             padding_y: 15
         MDTextField:
-            hint_text: "New Password"
+            id: new_password
+            hint_text: "New Name"
             mode: 'round'
             text_color_focus: 0,0,0,1
             text_color_normal: 0,0,0,1
         MDLabel:
-            text: "Confirm New Password:"
+            text: "Confirm New Name:"
             halign: 'center'
             size_hint_y: None
             height: self.texture_size[1]
             padding_y: 15
         MDTextField:
-            hint_text: "Confirm New Password"
+            id: confirm_password
+            hint_text: "Confirm New Name"
             mode: 'round'
             text_color_focus: 0,0,0,1
             text_color_normal: 0,0,0,1
@@ -46,7 +37,8 @@
             text_color: app.theme_cls.primary_light
             md_bg_color: 0,0,0,1
             pos_hint: {"center_x": 0.5}
-            on_release: app.change_screen("login_screen")
+            on_release:
+                app.change_screen("profile_screen")
         MDFillRoundFlatButton:
             text: "Go Back"
             halign: 'center'
@@ -56,4 +48,5 @@
             text_color: app.theme_cls.primary_light
             md_bg_color: 0,0,0,1
             pos_hint: {"center_x": 0.5}
-            on_release: app.change_screen("login_screen")
+            on_release:
+                app.change_screen("profile_screen")

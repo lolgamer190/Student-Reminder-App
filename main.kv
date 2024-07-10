@@ -9,6 +9,9 @@
 #:include kv/Change_password.kv
 #:include kv/Choose_file.kv
 #:include kv/Faq_screen.kv
+#:include kv/Change_name.kv
+#:include kv/change_email.kv
+#:include kv/change_username.kv
 
 GridLayout:
     cols: 1
@@ -47,3 +50,12 @@ GridLayout:
         FaqScreen:
             name: "faq_screen"
             id: faq_screen
+        ChangeName:
+            name: "change_name"
+            id: change_name
+        ChangeEmail:
+            name: "change_email"
+            id: change_email
+        ChangeUsername:
+            name: "change_username"
+            id: change_username

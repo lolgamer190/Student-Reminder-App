@@ -3,4 +3,6 @@
     BoxLayout:
         FileChooserIconView:
             id: filechooser
-            on_selection: my_widget.selected(filechooser.selection)
+            on_selection: 
+                #my_widget.selected(filechooser.selection)
+                app.change_screen("syllabus_screen")

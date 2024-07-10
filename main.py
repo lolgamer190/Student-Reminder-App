@@ -41,6 +41,12 @@ class ForgotPassword(Screen):
     pass
 class FaqScreen(Screen):
     pass
+class ChangeName(Screen):
+    pass
+class ChangeEmail(Screen):
+    pass
+class ChangeUsername(Screen):
+    pass
 
 class MainApp(MDApp):
     Window.size = [300,600]
