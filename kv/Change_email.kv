@@ -5,13 +5,14 @@
         spacing: 25
         orientation: 'vertical'
         MDLabel:
-            text: "Old Email:"
+            text: "Code has been sent to your email account to confirm the change:"
             halign: 'center'
             size_hint_y: None
             height: self.texture_size[1]
             padding_y: 15    
         MDTextField:
-            hint_text: "Old Email"
+            id: code
+            hint_text: "Code"
             mode: 'round'
             text_color_focus: 0,0,0,1
             text_color_normal: 0,0,0,1  
@@ -49,7 +50,7 @@
             md_bg_color: 0,0,0,1
             pos_hint: {"center_x": 0.5}
             on_release:
-                app.change_screen("profile_screen")
+                app.change_screen("profile_screen"), app.loginDetails.updateEmail(app.x.email, new_password.text, confirm_password.text) if app.loginDetails.validateCode(code.text) else app.no_validation_dialog()
         MDFillRoundFlatButton:
             text: "Go Back"
             halign: 'center'

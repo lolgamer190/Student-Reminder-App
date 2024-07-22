@@ -1,3 +1,4 @@
+from re import S
 from kivymd.app import MDApp
 from kivy.lang import Builder
 from kivy.uix.screenmanager import Screen
@@ -12,7 +13,8 @@ from database import LoginDetails
 from kivy.uix.boxlayout import BoxLayout
 from kivymd.uix.label import MDLabel
 from kivy.uix.popup import Popup
-from kivymd.uix.button import MDRaisedButton
+from kivymd.uix.button import MDFlatButton, MDRaisedButton
+from kivymd.uix.dialog import MDDialog
 
 class LoginScreen(Screen):
     pass
@@ -48,9 +50,38 @@ class ChangeEmail(Screen):
 class ChangeUsername(Screen):
     pass
 
+class userDetails():
+    def __init__(self):
+        self.name = "name"
+        self.username = "username"
+        self.email = "email"
+    
+    def changeName(self, a):
+        self.name = a
+        print("setter name called")
+        print(self.name)
+    
+    def changeUsername(self, username):
+        self.username = username
+        
+    def changeEmail(self, email):
+        self.email = email
+        
+
 class MainApp(MDApp):
+    dialog = None
+    
+    x = userDetails()
+    
+    def login(self,x, email): 
+        x.changeName("placeholder")
+        x.username = "placeholder"
+        x.email = email
+    
+    
     Window.size = [300,600]
     theme_cls = ThemeManager()
+    
     def build(self):
         self.GUI = Builder.load_file("main.kv")
         self.theme_cls.theme_style = "Light"
@@ -79,6 +110,49 @@ class MainApp(MDApp):
 
         help_popup = Popup(title="Help", content=popup_content, size_hint=(None, None), size=(300, 200))
         help_popup.open()
+     
+    def confirm_registration_dialog(self):
+        if not self.dialog:
+            self.dialog= MDDialog(
+                title="Notice:",
+                type="custom",
+                text="There will be a temporary password sent to your email for your first login. Please change it once you login.",
+                buttons=[
+                    MDFlatButton(
+                        text="OK",
+                        text_color=self.theme_cls.primary_color,
+                    )
+                ],
+            )
+        self.dialog.open()
+    def already_account_dialog(self):
+        if not self.dialog:
+            self.dialog= MDDialog(
+                title="Notice:",
+                type="custom",
+                text="There is already an account associated with this email address. Login or select forgot password.",
+                buttons=[
+                    MDFlatButton(
+                        text="OK",
+                        text_color=self.theme_cls.primary_color,
+                    )
+                ],
+            )
+        self.dialog.open()
+    def no_validation_dialog(self):
+        if not self.dialog:
+            self.dialog= MDDialog(
+                title="Notice",
+                type="custom",
+                text="One of the fields is incorrect. Please retry or use any potential features for help.",
+                buttons=[
+                    MDFlatButton(
+                        text="OK",
+                        text_color=self.theme_cls.primary_color,
+                    )
+                ],
+            )
+        self.dialog.open()
 
 
 if __name__ == '__main__':

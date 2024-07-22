@@ -43,8 +43,8 @@
             md_bg_color: 0,0,0,1
             pos_hint: {"center_x": 0.5}
             on_release: 
-                app.loginDetails.validateAccount(login_email.text, login_password.text)
-                app.change_screen("home_screen")
+                app.login(app.x, login_email.text) if app.loginDetails.validateAccount(login_email.text, login_password.text) else app.change_screen("login_screen")
+                app.change_screen("home_screen") if app.loginDetails.validateAccount(login_email.text, login_password.text) else app.no_validation_dialog()
         MDFillRoundFlatButton:
             text: "Forgot Password?"
             halign: 'center'

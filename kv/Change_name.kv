@@ -38,6 +38,7 @@
             md_bg_color: 0,0,0,1
             pos_hint: {"center_x": 0.5}
             on_release:
+                app.loginDetails.updateName(app.x.email, new_password.text, confirm_password.text)
                 app.change_screen("profile_screen")
         MDFillRoundFlatButton:
             text: "Go Back"

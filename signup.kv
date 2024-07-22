@@ -43,8 +43,7 @@
             md_bg_color: 0,0,0,1
             pos_hint: {"center_x": 0.5}
             on_release:
-                app.loginDetails.register(signup_email.text)
-                app.change_screen("login_screen")
+                app.already_account_dialog() if app.loginDetails.checkEmail(signup_email.text) else app.loginDetails.register(signup_email.text), app.confirm_registration_dialog()
         MDLabel:
             text: "Have an account?"
             font_style: 'Caption'
