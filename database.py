@@ -1,6 +1,7 @@
 #can register with this one, also can use this one as a basis to sign in, there is documentation here https://www.mongodb.com/docs/manual/reference/operator/update/
 import pymongo
-from pymongo import MongoClient
+import json
+from pymongo import MongoClient,InsertOne
 
 cluster = MongoClient("mongodb+srv://ronnee:ronnee@cluster0.csxaeir.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 
@@ -18,8 +19,6 @@ class LoginDetails():
             return True
         else:
             return False
-        
-
     #way to validate code on front end screen, can think about automating codes or something later, for now just a simple validate
     def validateCode(self,code):
         if code == "a1b2c3":
