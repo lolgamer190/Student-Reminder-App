@@ -8,11 +8,46 @@
             size_hint_y: None
             height: self.texture_size[1]
             pos_hint: {'top': .95}
+        MDLabel:
+            text: "Assignments due,"
+            bold: True
+            font_size: 20
+            size_hint_y: None
+            height:self.texture_size[1]
+            pos_hint:{'top': .87}
+        
+        GridLayout:
+            size_hint_y: None
+            height: 200
+            width: self.minimum_width
+            pos_hint:{'top': .83}
+            cols: 3
+            MDLabel:
+                text: " Assignment "
+            MDLabel:
+                text: " Due Date "
+            MDLabel:
+                text: " Urgency "
+            MDLabel:
+                text: "CSCE3444 Group Project"
+                bold: True
+            MDLabel:
+                text: "07-24-24"
+            MDLabel:
+                text: "High"
+            MDLabel:
+                text: "CSCE4010 Group Project"
+                bold: True
+            MDLabel:
+                text: "07-26-24"
+            MDLabel:
+                text: "High"
+
         MDBoxLayout:
             orientation: 'vertical'
             padding: dp(10)
             spacing: dp(10)
-            pos_hint: {'y': 0.4}
+            pos_hint: {'y': .1}
             BoxLayout:
                 size_hint_y: None
                 height: dp(30)
@@ -76,7 +111,7 @@
                     icon: 'plus'
                     size_hint_x: None
                     width: dp(48)
-                    on_release: root.add_reminder(title_input.text, description_input.text, timedate_input.text, urgency_spinner.text)
+                    #on_release: root.add_reminder(title_input.text, description_input.text, timedate_input.text, urgency_spinner.text)
         MDBoxLayout:
             adaptive_height: True
             spacing: 10
