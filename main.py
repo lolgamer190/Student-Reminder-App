@@ -1,4 +1,5 @@
 from re import S
+from kivy.properties import StringProperty
 from kivymd.app import MDApp
 from kivy.lang import Builder
 from kivy.uix.screenmanager import Screen
@@ -15,6 +16,13 @@ from kivymd.uix.label import MDLabel
 from kivy.uix.popup import Popup
 from kivymd.uix.button import MDFlatButton, MDRaisedButton
 from kivymd.uix.dialog import MDDialog
+from kivymd.uix.textfield import MDTextField
+from kivymd.uix.expansionpanel import MDExpansionPanel, MDExpansionPanelOneLine
+from database import LoginDetails
+from kivy.uix.button import Button
+
+class FAQItemContent(BoxLayout):
+    answer = StringProperty("")
 
 class LoginScreen(Screen):
     pass
@@ -93,6 +101,29 @@ class MainApp(MDApp):
         screen_manager = self.root.ids['screen_manager']
         screen_manager.current = screen_name
 
+    def on_start(self):
+        faq_list = self.root.ids.faq_screen.ids.faq_list
+
+        faqs = [
+            {"question": "How do I upload?", "answer": "How do I upload my Syllabus? You can upload your syllabus by choosing the File Upload option from the menu."},
+            {"question": "Reminders?", "answer": "How do I set Reminders? Reminders can be set manually in the Reminders tab."},
+            {"question": "Useability?", "answer": "Can I use this for more than schoolwork? This application was designed to work with students."},
+            {"question": "Changed due date?", "answer": "What if a due date changed? You can manually add and edit new assignments."}
+        ]
+
+        for faq in faqs:
+            content = FAQItemContent(answer=faq["answer"])
+            faq_list.add_widget(
+                MDExpansionPanel(
+                    icon="help-circle-outline",
+                    content=content,
+                    panel_cls=MDExpansionPanelOneLine(
+                        text=faq["question"],
+                         font_style='Subtitle1',
+                    ),
+                    height=dp(48) 
+                )
+            )
     
         
     def show_date_picker(self):
@@ -100,16 +131,70 @@ class MainApp(MDApp):
         
         date_dialog.open()
 
-    #Help popup in FAQ
     def show_help_popup(self):
-        popup_content = BoxLayout(orientation='vertical', padding=10)
-        popup_content.add_widget(MDLabel(text="Contact us : email@business.com"))
-        close_button = MDRaisedButton(text="Close", size_hint_y=None, height=40)
-        close_button.bind(on_release=lambda x: help_popup.dismiss())
+        popup_content = BoxLayout(orientation='vertical', padding=10, spacing=5)
+        
+        # Name field
+        self.name_field = MDTextField(hint_text="First and Last Name", size_hint_y=None, height=dp(40))
+        popup_content.add_widget(self.name_field)
+
+        # Message field
+        self.message_field = MDTextField(hint_text="Your Message", size_hint_y=None, height=dp(100), multiline=True)
+        popup_content.add_widget(self.message_field)
+
+        # Submit button
+        submit_button = Button(text="Send", size_hint_y=None, height=dp(50))
+        submit_button.bind(on_release=self.send_email)
+        popup_content.add_widget(submit_button)
+        
+        # Close button
+        close_button = Button(text="Close", size_hint_y=None, height=dp(50))
+        close_button.bind(on_release=lambda x: self.help_popup.dismiss())
         popup_content.add_widget(close_button)
 
-        help_popup = Popup(title="Help", content=popup_content, size_hint=(None, None), size=(300, 200))
-        help_popup.open()
+
+        self.help_popup = Popup(title="Contact Us", content=popup_content, size_hint=(None, None), size=(300, 300))
+        self.help_popup.open()
+
+    def send_email(self, instance):
+        import smtplib
+        from email.mime.multipart import MIMEMultipart
+        from email.mime.text import MIMEText
+
+        # Get user input
+        name = self.name_field.text
+        message = self.message_field.text
+
+        # Email settings
+        sender_email = "group12project3444@gmail.com"
+        receiver_email = "group12project3444@gmail.com"
+        app_password = "sdgm mirm vypq bvsg"
+        subject = "Help Request from {}".format(name)
+        body = "Name: {}\n\nMessage:\n{}".format(name, message)
+
+        # Create email
+        msg = MIMEMultipart()
+        msg['From'] = sender_email
+        msg['To'] = receiver_email
+        msg['Subject'] = subject
+        msg.attach(MIMEText(body, 'plain'))
+
+        # Send email
+        try:
+            with smtplib.SMTP('smtp.gmail.com', 587) as server:
+                server.starttls()
+                server.login(sender_email, app_password)
+                server.sendmail(sender_email, receiver_email, msg.as_string())
+                self.show_message_popup("Success", "Your message has been sent!")
+        except Exception as e:
+            self.show_message_popup("Error", str(e))
+
+        self.help_popup.dismiss()
+
+    def show_message_popup(self, title, message):
+        popup = Popup(title=title, content=MDLabel(text=message, halign='center'), size_hint=(None, None), size=(300, 200))
+        popup.open()
+
      
     def confirm_registration_dialog(self):
         if not self.dialog:
