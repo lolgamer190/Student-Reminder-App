@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "daring-atrium-427722-a9",
+  "private_key_id": "2ea5e58128f9cdee3a0ed364a054a1776291611d",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDDw1oT4gWM8fsb\nB1Iu5jjMqTlR0T2tqQQFaY3tpOcjHOtKiPJKpPwNqjHYq6Xgw93ZA6rotgC4gV6H\n203Pv63ieZiBb0NqrZ1tDvFuLpguOOQauuNmFvJG853Xu+pQ1dPuJW2+g64z50hz\naNGqO/xvTkBiV6Pp3gSVP0Shv+hMA7hlJa5cygoV1J5royt+tqCKKqK7ki3qFv3f\nAGuyOKSmwp9cFePVxjPpWEdto6CN63LvLnAJwWDfx7YogpQHrlCGcDIGnlBEcHtZ\n8Ok/alW+Mi+D2V2oU1eQ5ZrZxWcxdvcuPvNV9wSN0epTh98leldyW8Ek1NiezqWZ\nFx//9DO/AgMBAAECggEAE26MvnSCazSJ4cD0SMYpf9yRsqwRHJqDqlXen2btr+/q\n8IHE1eFSnmNKggtnx8vUIE/bjdtNxFgdyLaIHsW+vkBRAb1y9QqOxIiQhoixf8UT\nP2QAYTMzPBUVPJjhRWze60C5MrQM0rIeivYt+baX9CR8V5wDdUTIh61kDqTnVhl2\nhtOWzWDqtjaWztug+pfDYr+AYNqwHrtzrTSnCje4mdQDRoV7HemTrXuFvGksQQ5R\ncIYDRZE6/hSaqe/YO+OMRF77kLg6c0jNIfYXrfuG/bPIUtQXkA9sfy1OGkS3RqIA\nLKItRlbf5ag1ltNHqWasWXoz+WbxnFuvUxPkCOwnoQKBgQDyCa/Q7vMmUDyFBKJ1\nWNutFctwU+aK+3sgDVEmzUxGKkSmNG7M/smuf+E7OWlV8pCsOC21NSPnEoX88Uuu\nA+hICEpP1eqg1uP5bkuNmeoo48HVf8iqSmGEeP6xtv9KOaKj0QUC3gDG1VzmL7Sf\neK9PlhONekTSG3VAe4Ow6AByhQKBgQDPDkyPQ3Rz8MctSK8uDw3frfmY6rllzSZl\nlcBP56XlbhdZ94IWBi6RM8R4qWIW/mvV7JiV2xoEWV3sRhHSZsroH0J7aebtrR6D\ns2BZH/8PryWo7r8EHKjeo6m7qUzmUfmFa+4mff1yRjnpk2TpcLpvEAWPgP8kjaJ/\nc5rQjOZacwKBgQCn8EK2xOWfgvLLFREoPRSHv2SeNwjzDFU9QyA4vSAcWz2w2Ra8\nVFlaI88Cye4lvZ3WcVB9uDaGIZsoi8CIKJvmRyJQzMv098XND1OLF+2am5Wl7vkr\n91o8kbufUatHNEB+TAyfFa0SSX8hFJ7OO+3gWfCNLPZNltG/gTQ57nBJBQKBgEBo\n/1H1tu02Mo+Ys74NOtChSyrRodjUR6SEQC3bLtU/OQ5om1QEmknbI7wxXO0wOhVz\nI0hCv0YpErmkVnjwNyCcUM8Zc5fuKbbofwlalbqoTnvNwSgjTjjsCqnxEZX4XDmw\nCIZ63PPGes95ZYPk6GoSPtiUVUpmsO0a5kcH/cSXAoGBAL92yR1lOg0zgAd91v3s\nmvpkEOsQt4/6KknizF+mMF5z/0C4kk9PXN2Vy90d8+iE/F9q7XehZcGCAOguXDEu\noqeHz+1zfZ1dQUnP4a7uqZeDFkAkKvt8ZM7KZhhNcSS1jdNQ7FBrfkfe6I5sCxin\nkfs7q166OoFheTPB8WAaLAWH\n-----END PRIVATE KEY-----\n",
+  "client_email": "daring-atrium-427722-a9@appspot.gserviceaccount.com",
+  "client_id": "117950609733414638560",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/daring-atrium-427722-a9%40appspot.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

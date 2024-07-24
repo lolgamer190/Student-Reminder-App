@@ -7,3 +7,7 @@ class Reminders:
         self.urgency = urgency
         self.description = description
         self.title = title
+
+    def format_timedate(self):
+        # Format timedate
+        return self.timedate.strftime("%Y-%m-%d %H:%M")
