@@ -1,0 +1,62 @@
+#:include Login.kv
+#:include signup.kv
+#:include forgot_password.kv
+#:include kv/Home_screen.kv
+#:include kv/Calendar_screen.kv
+#:include kv/Syllabus_screen.kv
+#:include kv/Reminder_screen.kv
+#:include kv/Profile_screen.kv
+#:include kv/Change_password.kv
+#:include kv/Choose_file.kv
+#:include kv/Faq_screen.kv
+#:include kv/Change_name.kv
+#:include kv/change_email.kv
+#:include kv/change_username.kv
+#:include kv/Faq_item_content.kv
+
+GridLayout:
+    cols: 1
+    ScreenManager:
+        id: screen_manager
+        LoginScreen:
+            name: "login_screen"
+            id: login_screen
+        SignupScreen:
+            name: "signup_screen"
+            id: signup_screen
+        HomeScreen:
+            name: "home_screen"
+            id: home_screen
+        CalendarScreen:
+            name: "calendar_screen"
+            id: calendar_screen
+        SyllabusScreen:
+            name: "syllabus_screen"
+            id: syllabus_screen
+        ReminderScreen:
+            name: "reminder_screen"
+            id: reminder_screen
+        ProfileScreen:
+            name: "profile_screen"
+            id: profile_screen
+        FileScreen:
+            name: "file_screen"
+            id: file_screen
+        ChangePassword:
+            name: "change_password"
+            id: change_password
+        ForgotPassword:
+            name: "forgot_password"
+            id: forgot_password
+        FaqScreen:
+            name: "faq_screen"
+            id: faq_screen
+        ChangeName:
+            name: "change_name"
+            id: change_name
+        ChangeEmail:
+            name: "change_email"
+            id: change_email
+        ChangeUsername:
+            name: "change_username"
+            id: change_username

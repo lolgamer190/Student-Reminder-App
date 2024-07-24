@@ -1,0 +1,112 @@
+<HomeScreen>:
+    FloatLayout:
+        MDLabel:
+            id: welcome
+            text: app.x.name
+            bold: True
+            font_size: 20
+            halign: 'center'
+            size_hint_y: None
+            height: self.texture_size[1]
+            pos_hint:{'top': .9}
+
+        MDLabel:
+            text: "Classes"
+            bold: True
+            font_size: 20
+            size_hint_y: None
+            height:self.texture_size[1]
+            pos_hint:{'top': .75}
+
+        GridLayout:
+            size_hint_y: None
+            height: 200
+            width: self.minimum_width
+            pos_hint:{'top': .7}
+            cols: 4
+            MDLabel:
+                text: " Class "
+            MDLabel:
+                text: " Time "
+            MDLabel:
+                text: " Days "
+            MDLabel:
+                text: " Location "
+            MDLabel:
+                id: class1
+                text: "Class 1"
+                bold: True
+            MDLabel:
+                id: time1
+                text: "11:30 - 12:10"
+            MDLabel:
+                id: day1
+                text: "MWF"
+            MDLabel:
+                id: loc1
+                text: "B142"
+            MDLabel:
+                id: class2
+                text: "Class 2"
+                bold: True
+            MDLabel:
+                id: time2
+                text: "12:30 - 13:50"
+            MDLabel:
+                id: day2
+                text: "MWF"
+            MDLabel:
+                id: loc2
+                text: "B142"
+            MDLabel:
+                id: class3
+                text: "Class 3"
+                bold: True
+            MDLabel:
+                id: time3
+                text: "15:00 - 15:40"
+            MDLabel:
+                id: day3
+                text: "MWF"
+            MDLabel:
+                id: loc3
+                text: "B142"
+            MDLabel:
+                id: class4
+                text: "Class 4"
+                bold: True
+            MDLabel:
+                id: time4
+                text: "16:30 - 17:10"
+            MDLabel:
+                id: day4
+                text: "MWF"
+            MDLabel:
+                id: loc4
+                text: "B142"
+
+            
+
+        MDBoxLayout:
+            adaptive_height: True
+            spacing: 10
+            padding: 10
+            MDIconButton:
+                icon: 'home-variant'
+            MDIconButton:
+                icon: 'calendar-month-outline'
+                on_release: app.change_screen("calendar_screen")
+            MDIconButton:
+                icon: 'plus-box-outline'
+                on_release: app.change_screen("syllabus_screen")
+            MDIconButton:
+                icon: 'bell-outline'
+                on_release: app.change_screen("reminder_screen")
+            MDIconButton:
+                on_release: app.change_screen("profile_screen")
+                FitImage:
+                    source:'profile.jpg'
+                    size_hint: None, None
+                    size: 25, 25
+                    radius: [25,]
+                    pos_hint: {"center_x": 0.5, "center_y": 0.5}

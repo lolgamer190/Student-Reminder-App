@@ -1,0 +1,97 @@
+<ProfileScreen>:
+    FloatLayout:
+        MDLabel:
+            text: "Profile"
+            bold: True
+            font_size: 20
+            halign: 'center'
+            size_hint_y: None
+            height: self.texture_size[1]
+            pos_hint:{'top': .95}
+        MDIconButton:
+            icon: 'circle-outline'
+            halign: 'center'
+            size_hint_y:None
+            pos_hint: {'x': .45, 'top': .87}
+            FitImage:
+                source:'profile.jpg'
+                size_hint: None, None
+                size: 75, 75
+                radius: [75,]
+                pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        MDTextButton:
+            text: "Edit profile image"
+            color: 0,.7,1,1
+            bold: True
+            halign: 'center'
+            yalign: 'center'
+            pos_hint: {'x': .35, 'top': .78}
+        GridLayout:
+            pos_hint:{'top': .71}
+            size_hint_y: None
+            row_force_default: True
+            row_default_height: 52
+            cols: 3
+            MDLabel:
+                text: "Name"
+                bold: True
+            MDLabel:
+                id: profile_name
+                text: "Helena Hills"
+            MDIconButton:
+                icon:"pencil-outline"
+                on_release: app.change_screen("change_name")
+            MDLabel:
+                text: "Username"
+                bold: True
+            MDLabel:
+                id: profile_username
+                text: "@username"
+            MDIconButton:
+                icon:"pencil-outline"
+                on_release: app.change_screen("change_username")
+            MDLabel:
+                text: "Email"
+                bold: True
+            MDLabel:
+                id: profile_email
+                text: "name@my.unt.edu"
+            MDIconButton:
+                icon:"pencil-outline"
+                on_release: app.change_screen("change_email")
+            MDLabel:
+                text: "Password"
+                bold: True
+            MDLabel:
+                text: "*********"
+            MDIconButton:
+                icon:"pencil-outline"
+                on_release: app.change_screen("change_password")
+            MDLabel:
+                text: "Help Center"
+                bold: True
+            MDLabel:
+                text: ""
+            MDIconButton:
+                icon:"plus"
+                on_release: app.change_screen("faq_screen")
+        MDBoxLayout:
+            adaptive_height: True
+            spacing: 10
+            padding: 10
+            MDIconButton:
+                icon: 'home-variant-outline'
+                on_release: app.change_screen("home_screen")
+            MDIconButton:
+                icon: 'calendar-month-outline'
+                on_release: app.change_screen("calendar_screen")
+            MDIconButton:
+                icon: 'plus-box-outline'
+                on_release: app.change_screen("syllabus_screen")
+            MDIconButton:
+                icon: 'bell-outline'
+                on_release: app.change_screen("reminder_screen")
+            MDIconButton:
+                icon: 'help-circle'
+                on_release: app.change_screen("faq_screen")
+ 

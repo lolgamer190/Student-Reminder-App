@@ -1,0 +1,37 @@
+<CalendarScreen>:
+    FloatLayout:
+        MDFillRoundFlatButton:
+            theme_text_color: 'Custom'
+            text_color: app.theme_cls.primary_light
+            md_bg_color: 0,0,0,1
+            text: "Select day of reminders"
+            halign: 'center'
+            font_style: 'Button'
+            size_hint: .3, .1
+            pos_hint: {'x': .15, 'top': .6}
+
+            on_press: app.show_date_picker()
+        MDBoxLayout:
+            adaptive_height: True
+            spacing: 10
+            padding: 10
+            MDIconButton:
+                icon: 'home-variant-outline'                
+                on_release: app.change_screen("home_screen")
+            MDIconButton:
+                icon: 'calendar-month'
+            MDIconButton:
+                icon: 'plus-box-outline'
+                on_release: app.change_screen("syllabus_screen")
+            MDIconButton:
+                icon: 'bell-outline'
+                on_release: app.change_screen("reminder_screen")
+            MDIconButton:
+                on_release: app.change_screen("profile_screen")
+                FitImage:
+                    source:'profile.jpg'
+                    size_hint: None, None
+                    size: 25, 25
+                    radius: [25,]
+                    pos_hint: {"center_x": 0.5, "center_y": 0.5}
+            

@@ -1,0 +1,138 @@
+<ReminderScreen>:
+    FloatLayout:
+        MDLabel:
+            text: "Reminders of the day"
+            bold: True
+            font_size: 20
+            halign: 'center'
+            size_hint_y: None
+            height: self.texture_size[1]
+            pos_hint: {'top': .95}
+        MDLabel:
+            text: "Assignments due,"
+            bold: True
+            font_size: 20
+            size_hint_y: None
+            height:self.texture_size[1]
+            pos_hint:{'top': .87}
+        
+        GridLayout:
+            size_hint_y: None
+            height: 200
+            width: self.minimum_width
+            pos_hint:{'top': .83}
+            cols: 3
+            MDLabel:
+                text: " Assignment "
+            MDLabel:
+                text: " Due Date "
+            MDLabel:
+                text: " Urgency "
+            MDLabel:
+                text: "CSCE3444 Group Project"
+                bold: True
+            MDLabel:
+                text: "07-24-24"
+            MDLabel:
+                text: "High"
+            MDLabel:
+                text: "CSCE4010 Group Project"
+                bold: True
+            MDLabel:
+                text: "07-26-24"
+            MDLabel:
+                text: "High"
+
+        MDBoxLayout:
+            orientation: 'vertical'
+            padding: dp(10)
+            spacing: dp(10)
+            pos_hint: {'y': .1}
+            BoxLayout:
+                size_hint_y: None
+                height: dp(30)
+                MDLabel:
+                    size_hint_x: 0.25
+                    text: 'Title'
+                    halign: 'left'
+                    theme_text_color: 'Custom'
+                    text_color: 0, 0, 0, 1  # Black text
+                TextInput:
+                    id: title_input
+                    size_hint_x: 0.75
+                    multiline: False
+            BoxLayout:
+                size_hint_y: None
+                height: dp(30)
+                MDLabel:
+                    size_hint_x: 0.25
+                    text: 'Details'
+                    halign: 'left'
+                    theme_text_color: 'Custom'
+                    text_color: 0, 0, 0, 1  # Black text
+                TextInput:
+                    id: description_input
+                    size_hint_x: 0.75
+                    multiline: False
+            BoxLayout:
+                size_hint_y: None
+                height: dp(30)
+                MDLabel:
+                    size_hint_x: 0.25
+                    text: 'Date'
+                    halign: 'left'
+                    theme_text_color: 'Custom'
+                    text_color: 0, 0, 0, 1  # Black text
+                TextInput:
+                    id: timedate_input
+                    size_hint_x: 0.75
+                    multiline: False
+                    hint_text: 'MM-DD-YYYY HH:MM'
+            BoxLayout:
+                size_hint_y: None
+                height: dp(30)
+                MDLabel:
+                    size_hint_x: 0.25
+                    text: 'Urgency'
+                    halign: 'left'
+                    theme_text_color: 'Custom'
+                    text_color: 0, 0, 0, 1  # Black text
+                Spinner:
+                    id: urgency_spinner
+                    size_hint_x: 0.75
+                    text: 'Low'
+                    values: ['Low', 'Medium', 'High']
+            MDBoxLayout:
+                size_hint_y: None
+                height: dp(50)
+                padding: dp(10)
+                spacing: dp(10)
+                MDIconButton:
+                    icon: 'plus'
+                    size_hint_x: None
+                    width: dp(48)
+                    #on_release: root.add_reminder(title_input.text, description_input.text, timedate_input.text, urgency_spinner.text)
+        MDBoxLayout:
+            adaptive_height: True
+            spacing: 10
+            padding: 10
+            pos_hint: {"bottom": 1}
+            MDIconButton:
+                icon: 'home-variant-outline'
+                on_release: app.change_screen("home_screen")
+            MDIconButton:
+                icon: 'calendar-month-outline'
+                on_release: app.change_screen("calendar_screen")
+            MDIconButton:
+                icon: 'plus-box-outline'
+                on_release: app.change_screen("syllabus_screen")
+            MDIconButton:
+                icon: 'bell'
+            MDIconButton:
+                on_release: app.change_screen("profile_screen")
+                FitImage:
+                    source: 'profile.jpg'
+                    size_hint: None, None
+                    size: 25, 25
+                    radius: [25,]
+                    pos_hint: {"center_x": 0.5, "center_y": 0.5}

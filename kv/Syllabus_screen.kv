@@ -1,0 +1,40 @@
+<SyllabusScreen>:
+    FloatLayout:
+        MDLabel:
+            id: file_choose
+            text: "Choose a file to upload"
+            bold: True
+            font_size: 20
+            halign: 'center'
+            size_hint_y: None
+            height: self.texture_size[1]
+            pos_hint:{'top': .9}
+        MDIconButton:
+            icon: 'file-upload'
+            on_release: app.change_screen("file_screen")
+            pos_hint: {'x': .4, 'top': .8}
+        
+        MDBoxLayout:
+            adaptive_height: True
+            spacing: 10
+            padding: 10
+            MDIconButton:
+                icon: 'home-variant-outline'                
+                on_release: app.change_screen("home_screen")
+            MDIconButton:
+                icon: 'calendar-month-outline'
+                on_release: app.change_screen("calendar_screen")
+            MDIconButton:
+                icon: 'plus-box'
+            MDIconButton:
+                icon: 'bell-outline'
+                on_release: app.change_screen("reminder_screen")
+            MDIconButton:
+                on_release: app.change_screen("profile_screen")
+                FitImage:
+                    source:'profile.jpg'
+                    size_hint: None, None
+                    size: 25, 25
+                    radius: [25,]
+                    pos_hint: {"center_x": 0.5, "center_y": 0.5}
+            
