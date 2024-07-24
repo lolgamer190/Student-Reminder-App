@@ -62,3 +62,5 @@ class LoginDetails():
             return x["username"]
         else:
             return ""
+    def addCourse(self, email, course):
+         collection.update_one({"email": email}, {"$set":{"courses":course}})

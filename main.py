@@ -21,6 +21,7 @@ from kivymd.uix.expansionpanel import MDExpansionPanel, MDExpansionPanelOneLine
 from database import LoginDetails
 from kivy.uix.button import Button
 from kivymd.utils import asynckivy
+from kivy.uix.recycleview import RecycleView
 
 class FAQItemContent(BoxLayout):
     answer = StringProperty("")
@@ -37,6 +38,23 @@ class CalendarScreen(Screen):
 class HomeScreen(Screen):
     def on_enter(self):
         self.ids.welcome.text = "Good Morning " + MainApp.x.name + ","
+        self.ids.class1.text = MainApp.listcourses[0].name
+        self.ids.time1.text = MainApp.listcourses[0].times
+        self.ids.day1.text = MainApp.listcourses[0].days
+        self.ids.loc1.text = MainApp.listcourses[0].loc
+        self.ids.class2.text = MainApp.listcourses[1].name
+        self.ids.time2.text = MainApp.listcourses[1].times
+        self.ids.day2.text = MainApp.listcourses[1].days
+        self.ids.loc2.text = MainApp.listcourses[1].loc
+        self.ids.class3.text = MainApp.listcourses[2].name
+        self.ids.time3.text = MainApp.listcourses[2].times
+        self.ids.day3.text = MainApp.listcourses[2].days
+        self.ids.loc3.text = MainApp.listcourses[2].loc
+        self.ids.class4.text = MainApp.listcourses[3].name
+        self.ids.time4.text = MainApp.listcourses[3].times
+        self.ids.day4.text = MainApp.listcourses[3].days
+        self.ids.loc4.text = MainApp.listcourses[3].loc
+        
     pass
 
 class SyllabusScreen(Screen):
@@ -84,18 +102,29 @@ class userDetails():
         self.email = email
         
 class courses():
-    def __init__(self):
-        self.name = "Class"
-        self.days = "MTWThF"
-        self.times = "1200-2359"
+    def __init__(self,w,x,y,z):
+        self.name = w
+        self.days = x
+        self.times = y
         self.prof = "professor"
-        self.loc = "b142"
+        self.loc = z
                 
 
 class MainApp(MDApp):
     dialog = None
     
     x = userDetails()
+    xx = courses("CSCE3444","MW","1020-1220","B142")
+    w = courses("CSCE3600", "MW", "0800-0950", "K120")
+    y = courses("CSCE3610", "MW", "1600-1750", "D210")
+    z = courses("CSCE3110", "TTh", "1200-1350", "B140")
+    
+    listcourses = [w,xx,y,z]
+    
+    #l = LoginDetails()
+
+    #LoginDetails.addCourse(l, "b", xx)
+        
     
     def login(self,x, email):
         y = LoginDetails()
