@@ -39,6 +39,7 @@
             pos_hint: {"center_x": 0.5}
             on_release:
                 app.loginDetails.updateName(app.x.email, new_password.text, confirm_password.text)
+                app.login(app.x, app.x.email)
                 app.change_screen("profile_screen")
         MDFillRoundFlatButton:
             text: "Go Back"

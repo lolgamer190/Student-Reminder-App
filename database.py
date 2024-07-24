@@ -49,16 +49,16 @@ class LoginDetails():
         else:
             return False
     
-    #def getName(self, email):
-        #if collection.find_one({"email": email}):
-            #x = collection.find_one({"email": email})
-            #return x["name"]
-        #else:
-            #return ""
+    def getName(self, email):
+        if collection.find_one({"email": email}):
+            x = collection.find_one({"email": email})
+            return x["name"]
+        else:
+            return ""
         
-    #def getUsername(self, email):
-        #if collection.find_one({"email": email}):
-            #x = collection.find_one({"email": email})
-            #return x["username"]
-        #else:
-            #return ""
+    def getUsername(self, email):
+        if collection.find_one({"email": email}):
+            x = collection.find_one({"email": email})
+            return x["username"]
+        else:
+            return ""

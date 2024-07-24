@@ -20,6 +20,7 @@ from kivymd.uix.textfield import MDTextField
 from kivymd.uix.expansionpanel import MDExpansionPanel, MDExpansionPanelOneLine
 from database import LoginDetails
 from kivy.uix.button import Button
+from kivymd.utils import asynckivy
 
 class FAQItemContent(BoxLayout):
     answer = StringProperty("")
@@ -34,6 +35,8 @@ class CalendarScreen(Screen):
     pass
 
 class HomeScreen(Screen):
+    def on_enter(self):
+        self.ids.welcome.text = "Good Morning " + MainApp.x.name + ","
     pass
 
 class SyllabusScreen(Screen):
@@ -42,6 +45,11 @@ class SyllabusScreen(Screen):
 class ReminderScreen(Screen):
     pass
 class ProfileScreen(Screen):
+    def on_enter(self):
+        print(MainApp.x.name + MainApp.x.username + MainApp.x.email)
+        self.ids.profile_name.text = MainApp.x.name
+        self.ids.profile_username.text = MainApp.x.username
+        self.ids.profile_email.text = MainApp.x.email
     pass
 class FileScreen(Screen):
     pass
@@ -75,17 +83,26 @@ class userDetails():
     def changeEmail(self, email):
         self.email = email
         
+class courses():
+    def __init__(self):
+        self.name = "Class"
+        self.days = "MTWThF"
+        self.times = "1200-2359"
+        self.prof = "professor"
+        self.loc = "b142"
+                
 
 class MainApp(MDApp):
     dialog = None
     
     x = userDetails()
     
-    def login(self,x, email): 
-        x.changeName("placeholder")
-        x.username = "placeholder"
+    def login(self,x, email):
+        y = LoginDetails()
+        x.changeName(LoginDetails.getName(y,email))
+        x.changeUsername(LoginDetails.getUsername(y,email))
         x.email = email
-    
+        
     
     Window.size = [300,600]
     theme_cls = ThemeManager()
@@ -238,7 +255,6 @@ class MainApp(MDApp):
                 ],
             )
         self.dialog.open()
-
 
 if __name__ == '__main__':
     MainApp().run()

@@ -50,7 +50,7 @@
             md_bg_color: 0,0,0,1
             pos_hint: {"center_x": 0.5}
             on_release:
-                app.change_screen("profile_screen"), app.loginDetails.updateEmail(app.x.email, new_password.text, confirm_password.text) if app.loginDetails.validateCode(code.text) else app.no_validation_dialog()
+                app.change_screen("profile_screen"), app.loginDetails.updateEmail(app.x.email, new_password.text, confirm_password.text), app.x.changeEmail(new_password.text) if app.loginDetails.validateCode(code.text) else app.no_validation_dialog()
         MDFillRoundFlatButton:
             text: "Go Back"
             halign: 'center'
