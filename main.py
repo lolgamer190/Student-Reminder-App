@@ -203,7 +203,7 @@ class MainApp(MDApp):
         popup_content = BoxLayout(orientation='vertical', padding=10, spacing=5)
         
         # Name field
-        self.name_field = MDTextField(hint_text="First and Last Name", size_hint_y=None, height=dp(40))
+        self.name_field = MDTextField(hint_text="Your email", size_hint_y=None, height=dp(40))
         popup_content.add_widget(self.name_field)
 
         # Message field
