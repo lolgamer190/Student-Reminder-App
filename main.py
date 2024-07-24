@@ -21,6 +21,8 @@ from kivymd.uix.expansionpanel import MDExpansionPanel, MDExpansionPanelOneLine
 from database import LoginDetails
 from kivy.uix.button import Button
 from kivymd.utils import asynckivy
+from google.cloud import storage
+import os
 
 class FAQItemContent(BoxLayout):
     answer = StringProperty("")
@@ -52,7 +54,23 @@ class ProfileScreen(Screen):
         self.ids.profile_email.text = MainApp.x.email
     pass
 class FileScreen(Screen):
-    pass
+    try:
+        os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = r'daring-atrium-427722-a9-2ea5e58128f9.json'
+        def selected(self, filename):
+            bucket_name = "syllabus-readin"
+            source_file_name = filename
+            destination_blob_name = filename
+            print(filename)
+            def upload_blob(bucket_name, source_file_name, destination_blob_name):
+                """Uploads a file to the bucket."""
+                storage_client = storage.Client()
+                bucket = storage_client.bucket(bucket_name)
+                blob = bucket.blob(destination_blob_name)
+                blob.upload_from_filename(source_file_name)
+                print(f"File {source_file_name} uploaded to {destination_blob_name}.")
+            upload_blob(bucket_name, *source_file_name, *destination_blob_name)
+    except:
+        pass
 class ChangePassword(Screen):
     pass
 class ForgotPassword(Screen):
